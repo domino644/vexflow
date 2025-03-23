@@ -494,7 +494,7 @@ module.exports = (grunt) => {
     fs.writeFileSync(BUILD_ESM_PACKAGE_JSON_FILE, '{\n  "type": "module"\n}\n');
     if (arg === 'watch') {
       this.async(); // Set grunt's async mode to keep the task running forever.
-      const TscWatchClient = require('tsc-watch/client');
+      const { TscWatchClient } = require('tsc-watch/client');
       const watch = new TscWatchClient();
       watch.on('started', () => {
         console.log('Press CTRL + C to quit.');
