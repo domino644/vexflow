@@ -873,6 +873,10 @@ export class StaveNote extends StemmableNote {
     return this.flag?.getStyle();
   }
 
+  getClef(): string {
+    return this.clef;
+  }
+
   // Sets the notehead at `index` to the provided coloring `style`.
   //
   // `style` is an `object` with the following properties: `shadowColor`,
