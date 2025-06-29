@@ -236,7 +236,9 @@ export abstract class Note extends Tickable {
     font: string;
     stroke_px: number;
   };
+
   protected duration: string;
+  protected dots: number;
   protected leftDisplacedHeadPx: number;
   protected rightDisplacedHeadPx: number;
   protected noteType: string;
@@ -273,7 +275,7 @@ export abstract class Note extends Tickable {
     this.duration = parsedNoteStruct.duration;
     this.noteType = parsedNoteStruct.type;
     this.customTypes = parsedNoteStruct.customTypes;
-
+    this.dots = parsedNoteStruct.dots || 0;
     if (noteStruct.duration_override) {
       // Custom duration
       this.setDuration(noteStruct.duration_override);
@@ -484,6 +486,11 @@ export abstract class Note extends Tickable {
   /** Accessor to duration. */
   getDuration(): string {
     return this.duration;
+  }
+
+  /** Accessor to dots */
+  getDots(): number {
+    return this.dots;
   }
 
   /** Accessor to isDotted. */
