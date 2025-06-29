@@ -521,13 +521,17 @@ export abstract class Note extends Tickable {
     this.beam = beam;
     return this;
   }
-
+  removeAccidentals(): this {
+    super.removeAccidentals();
+    return this;
+  }
   /**
    * Attach a modifier to this note.
    * @param modifier the Modifier to add.
    * @param index of the key to modify.
    * @returns this
    */
+
   addModifier(modifier: Modifier, index: number = 0): this {
     const signature = 'Note.addModifier(modifier: Modifier, index: number=0)';
     // Backwards compatibility with 3.0.9.
