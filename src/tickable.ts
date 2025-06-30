@@ -273,6 +273,11 @@ export abstract class Tickable extends Element {
     return this;
   }
 
+  removeAccidentals(): this {
+    this.modifiers = this.modifiers.filter((m) => m.getAttributes().type !== 'Accidental');
+    return this;
+  }
+
   /**
    * Optional, if tickable has modifiers, associate a Modifier.
    * @param mod the modifier

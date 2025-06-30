@@ -695,6 +695,9 @@ export class StaveNote extends StemmableNote {
     return resultLine;
   }
 
+  getClef(): string {
+    return this.clef;
+  }
   /**
    * @returns true if this note is a type of rest. Rests don't have pitches, but take up space in the score.
    */
