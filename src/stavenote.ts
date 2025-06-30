@@ -695,6 +695,14 @@ export class StaveNote extends StemmableNote {
     return resultLine;
   }
 
+  /**
+   * @returns The clef of this note.
+   * @example
+   * ```javascript
+   * const staveNote = new Vex.Flow.StaveNote({ keys: ['c/4'], duration: 'q', clef: 'treble' });
+   * console.log(staveNote.getClef()); // 'treble'
+   * ```
+   */
   getClef(): string {
     return this.clef;
   }
@@ -874,10 +882,6 @@ export class StaveNote extends StemmableNote {
   }
   getFlagStyle(): ElementStyle | undefined {
     return this.flag?.getStyle();
-  }
-
-  getClef(): string {
-    return this.clef;
   }
 
   // Sets the notehead at `index` to the provided coloring `style`.
