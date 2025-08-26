@@ -217,7 +217,8 @@ export class StaveNote extends StemmableNote {
       const lineSpacing =
         noteU.note.hasStem() && noteL.note.hasStem() && noteU.stemDirection === noteL.stemDirection ? 0.0 : 0.5;
       if (noteL.isrest && noteU.isrest && noteU.note.duration === noteL.note.duration) {
-        noteL.note.render_options.draw = false;
+        // HACK: Turned off as of STV-97, https://github.com/Galaktikkon/stavely/issues/97
+        // noteL.note.render_options.draw = false;
       } else if (noteU.minLine <= noteL.maxLine + lineSpacing) {
         if (noteU.isrest) {
           // shift rest up
