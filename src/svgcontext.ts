@@ -147,6 +147,9 @@ export class SVGContext extends RenderContext {
     this.element.appendChild(svg);
     this.svg = svg;
 
+    // HACK: STV: adding a custom class for precise selection
+    this.svg.id = 'VFSVGContextContainter';
+
     this.parent = this.svg;
     this.groups = [this.svg];
 
